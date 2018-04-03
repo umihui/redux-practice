@@ -4,6 +4,11 @@ class Results extends Component {
     super(props);
     this.store = this.props.store;
   }
+
+  getBackgroundColor() {
+    return { backgroundColor: this.store.getState().color };
+  }
+
   votesAngularInPercent() {
     if (this.store.getState().angular) {
       return (
@@ -60,7 +65,7 @@ class Results extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={this.getBackgroundColor()}>
         <span className="label label-danger">
           Angular: {this.votesAngularInPercent().toFixed(2) + "%"}
         </span>
