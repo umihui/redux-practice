@@ -21,14 +21,13 @@ class App extends Component {
     return (
       <div>
         <div className="jumbotron" style={{ textAlign: "center" }}>
-          <img src="ctsw_logo.png" height="96" alt="CodingTheSmartWay.com" />
           <h2>What is your favorite front-end development framework 2017?</h2>
           <h4>Click on the logos below to vote!</h4>
           <br />
           <div className="row">
             <div className="col-xs-offset-3 col-xs-2">
               <img
-                src="angular_logo.png"
+                src="angularjs.svg"
                 height="96"
                 alt="Angular"
                 onClick={this.handleVoteAngular}
@@ -36,7 +35,7 @@ class App extends Component {
             </div>
             <div className="col-xs-2">
               <img
-                src="react_logo.png"
+                src="reactjs.png"
                 height="96"
                 alt="React"
                 onClick={this.handleVoteReact}
@@ -44,7 +43,7 @@ class App extends Component {
             </div>
             <div className="col-xs-2">
               <img
-                src="vuejs_logo.png"
+                src="jkhj.png"
                 height="96"
                 alt="Vue.js"
                 onClick={this.handleVoteVuejs}

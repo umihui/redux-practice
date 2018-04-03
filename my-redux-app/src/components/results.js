@@ -5,12 +5,12 @@ class Results extends Component {
     this.store = this.props.store;
   }
   votesAngularInPercent() {
-    if (this.store.getState().angular) {
+    if (this.store.getState().angular.vote) {
       return (
-        this.store.getState().angular /
-        (this.store.getState().angular +
-          this.store.getState().react +
-          this.store.getState().vuejs) *
+        this.store.getState().angular.vote /
+        (this.store.getState().angular.vote +
+          this.store.getState().react.vote +
+          this.store.getState().vuejs.vote) *
         100
       );
     } else {
@@ -18,12 +18,12 @@ class Results extends Component {
     }
   }
   votesReactInPercent() {
-    if (this.store.getState().react) {
+    if (this.store.getState().react.vote) {
       return (
-        this.store.getState().react /
-        (this.store.getState().angular +
-          this.store.getState().react +
-          this.store.getState().vuejs) *
+        this.store.getState().react.vote /
+        (this.store.getState().angular.vote +
+          this.store.getState().react.vote +
+          this.store.getState().vuejs.vote) *
         100
       );
     } else {
@@ -31,12 +31,12 @@ class Results extends Component {
     }
   }
   votesVuejsInPercent() {
-    if (this.store.getState().vuejs) {
+    if (this.store.getState().vuejs.vote) {
       return (
-        this.store.getState().vuejs /
-        (this.store.getState().angular +
-          this.store.getState().react +
-          this.store.getState().vuejs) *
+        this.store.getState().vuejs.vote /
+        (this.store.getState().angular.vote +
+          this.store.getState().react.vote +
+          this.store.getState().vuejs.vote) *
         100
       );
     } else {

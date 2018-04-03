@@ -1,24 +1,24 @@
 const initialState = {
-  angular: 0,
-  react: 0,
-  vuejs: 0
+  angular: { vote: 0, color: "red" },
+  react: { vote: 0, color: "blue" },
+  vuejs: { vote: 0, color: "green" }
 };
 export default (state = initialState, action) => {
   switch (action.type) {
     case "VOTE_ANGULAR":
       console.log("Your choice is Angular!");
       return Object.assign({}, state, {
-        angular: state.angular + 1
+        angular: { vote: state.angular.vote + 1, color: "red" }
       });
     case "VOTE_REACT":
       console.log("Your choice is React!");
       return Object.assign({}, state, {
-        react: state.react + 1
+        react: { vote: state.react.vote + 1, color: "blue" }
       });
     case "VOTE_VUEJS":
       console.log("Your choice is Vue.js");
       return Object.assign({}, state, {
-        vuejs: state.vuejs + 1
+        vuejs: { vote: state.vuejs.vote + 1, color: "green" }
       });
     default:
       return state;
