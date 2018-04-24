@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import React, { Component } from "react";
 import { voteAngular, voteReact, voteVuejs } from "./actions";
+import OptionView from "./components/OptionView.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -25,30 +26,21 @@ class App extends Component {
           <h4>Click on the logos below to vote!</h4>
           <br />
           <div className="row">
-            <div className="col-xs-offset-3 col-xs-2">
-              <img
-                src="angularjs.svg"
-                height="96"
-                alt="Angular"
-                onClick={this.handleVoteAngular}
-              />
-            </div>
-            <div className="col-xs-2">
-              <img
-                src="reactjs.png"
-                height="96"
-                alt="React"
-                onClick={this.handleVoteReact}
-              />
-            </div>
-            <div className="col-xs-2">
-              <img
-                src="jkhj.png"
-                height="96"
-                alt="Vue.js"
-                onClick={this.handleVoteVuejs}
-              />
-            </div>
+            <OptionView
+              image={"angularjs.svg"}
+              handleVote={this.handleVoteAngular}
+              name={"angularJS"}
+            />
+            <OptionView
+              image={"reactjs.png"}
+              handleVote={this.handleVoteReact}
+              name={"React"}
+            />
+            <OptionView
+              image={"jkhj.png"}
+              handleVote={this.handleVoteVuejs}
+              name={"Vue.js"}
+            />
           </div>
         </div>
       </div>
